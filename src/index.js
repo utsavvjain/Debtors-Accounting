@@ -2,11 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { createStore } from 'redux';
+import AccountingReducer from './reducers';
 import reportWebVitals from './reportWebVitals';
-
+import { Provider } from 'react-redux';
+const reduxStore=createStore(AccountingReducer);
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store={reduxStore}>
     <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
